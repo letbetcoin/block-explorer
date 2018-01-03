@@ -1,0 +1,52 @@
+</div>
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 text-left">
+                <span class="copyright">Copyright ©
+                    <a href="<%=copyright.url%>" target="_blank">
+                        <%=copyright.name%>
+                    </a>
+                    <%=copyright.time%>
+                </span>
+            </div>
+            <div class="col-md-4">
+                <ul class="list-inline social-buttons">
+                    <li class="list-inline-item">
+                        <a href="<%=social.facebook%>" target="_blank">
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="<%=social.twitter%>" target="_blank">
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="<%=social.github%>" target="_blank">
+                            <i class="fa fa-github"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-4 text-right">
+                <ul class="list-inline quicklinks">
+                    <%quickLinks.forEach(item => {%>
+                        <li class="list-inline-item mr-3">
+                            <a href="<%=item.url%>" target="_blank">
+                                <%=item.name%>
+                            </a>
+                        </li>
+                        <%})%>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+<script src="<%=publicPath%>js/jquery.min.js"></script>
+<script src="<%=publicPath%>js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

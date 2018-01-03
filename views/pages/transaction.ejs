@@ -1,0 +1,99 @@
+<div class="container">
+    <div class="title">Transaction Information</div>
+    <div class="table-responsive">
+        <table class="table nav-justified table-hover" cellpadding="0" cellspacing="0">
+            <tr>
+                <td class="td-label">TxHash:</td>
+                <td>
+                    <%= data.hash %>
+                </td>
+            </tr>
+            <tr>
+                <td class="td-label">TxReceipt Status:</td>
+                <td>
+                    <span class="<%=data.status_class_name%>">
+                        <%= data.status_name %>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="td-label">Block Height:</td>
+                <td>
+                    <a href="<%=url.blockDetail(data.block_hash)%>">
+                        <%=data.block_number%>
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <td class="td-label">TimeStamp:</td>
+                <td>
+                    <%=format.datetime(data.timestamp)%>
+                </td>
+            </tr>
+            <tr>
+                <td class="td-label">From:</td>
+                <td>
+                    <a href="<%= url.addressDetail(data.from) %>">
+                        <%= data.from %>
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <td class="td-label">To:</td>
+                <td>
+                    <a href="<%=url.addressDetail(data.to)%>">
+                        <%= data.to %>
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <td class="td-label">Value:</td>
+                <td>
+                    <%= format.lbt(calc.lbt(data.value)) %>
+                </td>
+            </tr>
+            <tr>
+                <td class="td-label">Gas Limit:</td>
+                <td>
+                    <%= format.decimal(data.gas) %>
+                </td>
+            </tr>
+            <tr>
+                <td class="td-label">Gas Used By Txn:</td>
+                <td>
+                    <%= format.decimal(data.gas_used) %>
+                </td>
+            </tr>
+            <tr>
+                <td class="td-label">Gas Price:</td>
+                <td>
+                    <%= format.lbt(calc.lbt(data.gas_price)) %>
+                </td>
+            </tr>
+            <tr>
+                <td class="td-label">Actual Tx Cost/Fee:</td>
+                <td>
+                    <%= format.lbt(calc.lbt(data.tx_fee)) %>
+                </td>
+            </tr>
+            <tr>
+                <td class="td-label">Cumulative Gas Used:</td>
+                <td>
+                    <%= format.decimal(data.cumulative_gas_used) %>
+                </td>
+            </tr>
+            <tr>
+                <td class="td-label">Nonce:</td>
+                <td>
+                    <%= data.nonce %>
+                </td>
+            </tr>
+            <tr>
+                <td class="td-label">Input Data:</td>
+                <td>
+                    <%= data.input %>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>

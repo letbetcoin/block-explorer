@@ -1,0 +1,108 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 col-sm-12 portfolio-item">
+            <div class="panel panel-default panel-trans">
+                <div class="panel-heading">
+                    <div class="tit">
+                        <span class="fa fa-cubes"></span>
+                        Blocks
+                        <a href="<%=url.blockListing()%>" class="btn btn-primary pull-right">View All</a>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <%- include('../others/no-data', {enabled: !block.items.length})%>
+                        <% block.items.forEach(item => {%>
+                            <div class="trans-item">
+                                <div class="tit text-over">
+                                    #Block
+                                    <a href="<%= url.blockDetail(item.hash) %>">
+                                        <%=item.number%>
+                                    </a>
+                                </div>
+                                <div class="info">
+                                    <div class="add-long text-over">
+                                        <label>
+                                            Mined By
+                                        </label>
+                                        <a href="<%= url.addressDetail(item.miner) %>">
+                                            <%=item.miner%>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="info">
+                                    <%if (item.number_transaction){%>
+                                        <a href="<%=url.allTransactions(1, item.number)%>" title="Click to View Transactions">
+                                            <%= format.decimal(item.number_transaction) %>
+                                                transactions
+                                        </a>
+                                        <%}else{%>
+                                            <span class="amount">
+                                                no transaction
+                                            </span>
+                                            <%}%>
+                                </div>
+
+                                <span class="time">
+                                    <%= format.age(item.timestamp) %>
+                                </span>
+                            </div>
+                            <%})%>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-sm-12 portfolio-item">
+            <div class="panel panel-default panel-trans">
+                <div class="panel-heading">
+                    <div class="tit">
+                        <span class="fa fa-exchange"></span>
+                        Transactions
+                        <a href="<%=url.allTransactions()%>" class="btn btn-primary pull-right">View All</a>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <%- include('../others/no-data', {enabled: !trans.items.length})%>
+                        <% trans.items.forEach(item => {%>
+                            <div class="trans-item">
+                                <div class="tit text-over">
+                                    #TX
+                                    <a href="<%= url.transactionDetail(item.hash) %>">
+                                        <%=item.hash%>
+                                    </a>
+                                </div>
+
+                                <div class="info">
+                                    <div class="add text-over">
+                                        <label>
+                                            From
+                                        </label>
+                                        <a href="<%= url.addressDetail(item.from) %>">
+                                            <%=item.from%>
+                                        </a>
+                                    </div>
+                                    <span class="ic fa fa-share text-success"></span>
+                                    <div class="add text-over">
+                                        <label>
+                                            To
+                                        </label>
+                                        <a href="<%= url.addressDetail(item.to) %>">
+                                            <%=item.to%>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="info">
+                                    <span class="amount">
+                                        Amount
+                                        <%= format.lbt(calc.lbt(item.value)) %>
+                                    </span>
+                                </div>
+
+                                <span class="time">
+                                    <%= format.age(item.timestamp) %>
+                                </span>
+                            </div>
+                            <%})%>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

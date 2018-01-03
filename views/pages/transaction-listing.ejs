@@ -1,0 +1,69 @@
+<div class="container">
+    <% if (data.items.length) { %>
+        <%- include('../others/paging', paging)%>
+            <% } %>
+                <div class="table-responsive mt-3">
+                    <table class="table nav-justified table-hover" cellpadding="0" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th>TxHash</th>
+                                <th>Block</th>
+                                <th>Age</th>
+                                <th>From</th>
+                                <th></th>
+                                <th>To</th>
+                                <th class="text-center">Status</th>
+                                <th>Value</th>
+                                <th>TxFee</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% data.items.forEach(item => {%>
+                                <tr>
+                                    <td>
+                                        <a href="<%= url.transactionDetail(item.hash) %>">
+                                            <%=item.hash%>
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <a href="<%= url.blockDetail(item.block_hash) %>">
+                                            <%=item.block_number%>
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <%= format.age(item.timestamp) %>
+                                    </td>
+                                    <td>
+                                        <a href="<%= url.addressDetail(item.from) %>">
+                                            <%=item.from%>
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <span class="text-success fa fa-share"></span>
+                                    </td>
+                                    <td>
+                                        <a href="<%= url.addressDetail(item.to) %>">
+                                            <%=item.to%>
+                                        </a>
+                                    </td>
+                                    <td class="text-center">
+                                        <small class="<%=item.status_class_name%> p-1">
+                                            <%= item.status_name %>
+                                        </small>
+                                    </td>
+                                    <td>
+                                        <%= format.lbt(calc.lbt(item.value)) %>
+                                    </td>
+                                    <td>
+                                        <%= format.lbt(calc.lbt(item.tx_fee)) %>
+                                    </td>
+                                </tr>
+                                <%})%>
+                        </tbody>
+                    </table>
+                    <%- include('../others/no-data', {enabled: !data.items.length})%>
+                </div>
+                <%if (!paging.empty){%>
+                    <%- include('../others/paging', {paging: paging})%>
+                        <%}%>
+</div>

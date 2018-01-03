@@ -1,0 +1,118 @@
+<div class="container">
+  <div class="title">Block Information</div>
+  <div class="table-responsive">
+    <table class="table nav-justified table-hover" cellpadding="0" cellspacing="0">
+      <tbody>
+        <tr>
+          <td class="td-label">Height:</td>
+          <td>
+            <%= data.number %>
+          </td>
+        </tr>
+        <tr>
+          <td class="td-label">TimeStamp:
+          </td>
+          <td>
+            <%= format.datetime(data.timestamp) %>
+          </td>
+        </tr>
+        <tr>
+          <td class="td-label">Transactions:
+          </td>
+          <td>
+            <%if (data.number_transaction){%>
+              <a href="<%=url.allTransactions(1, data.number)%>" title="Click to View Transactions">
+                <%= format.decimal(data.number_transaction) %>
+                  transactions
+              </a>
+              <%}else{%>
+                no transaction
+                <%}%>
+          </td>
+        </tr>
+        <tr>
+          <td class="td-label">Hash:
+          </td>
+          <td>
+            <%= data.hash %>
+          </td>
+        </tr>
+        <tr>
+          <td class="td-label">Parent Hash:
+          </td>
+          <td>
+            <a href="<%=url.blockDetail(data.parent_hash)%>">
+              <%= data.parent_hash %>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="td-label">Sha3Uncles:
+          </td>
+          <td>
+            <%= data.sha3_uncles %>
+          </td>
+        </tr>
+        <tr>
+          <td class="td-label">Mined By:
+          </td>
+          <td>
+            <a href="<%=url.addressDetail(data.miner)%>">
+              <%= data.miner %>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="td-label">Difficulty:
+          </td>
+          <td>
+            <%= format.decimal(data.difficulty) %>
+          </td>
+        </tr>
+        <tr>
+          <td class="td-label">Total Difficulty:
+          </td>
+          <td>
+            <%= format.decimal(data.total_difficulty) %>
+          </td>
+        </tr>
+        <tr>
+          <td class="td-label">Size:
+          </td>
+          <td>
+            <%= format.decimal(data.size) %>
+          </td>
+        </tr>
+        <tr>
+          <td class="td-label">Gas Used:
+          </td>
+          <td>
+            <%= format.decimal(data.gas_used) %> -
+              <%= format.percent(data.gas_used/data.gas_limit) %>
+          </td>
+        </tr>
+        <tr>
+          <td class="td-label">Gas Limit:
+          </td>
+          <td>
+            <%= format.decimal(data.gas_limit) %>
+          </td>
+        </tr>
+        <tr>
+          <td class="td-label">Nonce:
+          </td>
+          <td>
+            <%= data.nonce %>
+          </td>
+        </tr>
+        <tr>
+          <td class="td-label">Extra Data:
+          </td>
+          <td>
+            <%= data.extra_data %>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

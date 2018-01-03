@@ -1,0 +1,60 @@
+<div class="container">
+    <% if (data.items.length) { %>
+        <%- include('../others/paging', paging)%>
+            <% } %>
+                <div class="table-responsive mt-3">
+                    <table class="table nav-justified table-hover" cellpadding="0" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th>Height</th>
+                                <th>Age</th>
+                                <th>Txn</th>
+                                <th>Miner</th>
+                                <th>Gas Used</th>
+                                <th>Gas Limit</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% data.items.forEach(item => {%>
+                                <tr>
+                                    <td>
+                                        <a href="<%= url.blockDetail(item.hash) %>">
+                                            <%=item.number%>
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <%= format.age(item.timestamp) %>
+                                    </td>
+                                    <td>
+                                        <%if(item.number_transaction){%>
+                                            <a href="<%=url.allTransactions(1, item.number)%>">
+                                                <%= format.number(item.number_transaction) %>
+                                            </a>
+                                            <%}else{%>
+                                                0
+                                                <%}%>
+                                    </td>
+                                    <td>
+                                        <a href="<%= url.addressDetail(item.miner) %>">
+                                            <%=item.miner%>
+                                        </a>
+                                        <%=item.miner%>
+                                    </td>
+                                    <td>
+                                        <%= format.decimal(item.gas_used) %>
+                                            -
+                                            <%= format.percent(item.gas_used/item.gas_limit) %>
+                                    </td>
+                                    <td>
+                                        <%= format.decimal(item.gas_limit) %>
+                                    </td>
+                                </tr>
+                                <%})%>
+                        </tbody>
+                    </table>
+                    <%- include('../others/no-data', {enabled: !data.items.length})%>
+                </div>
+                <%if (!paging.empty){%>
+                    <%- include('../others/paging', {paging: paging})%>
+                        <%}%>
+</div>

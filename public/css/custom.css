@@ -1,0 +1,238 @@
+body {
+    padding-top: 50px;
+    background-color: #f8f9fa;
+}
+
+h4 {
+    font-weight: 500;
+}
+
+a {
+    color: #038096;
+}
+
+a:hover {
+    color: #00accb;
+}
+
+.main {
+    min-height: 100vh
+}
+
+.page-heading {
+    padding: 30px 0 0;
+    background: none;
+}
+
+.page-heading h1 {
+    font-size: 2rem;
+    margin: 0;
+    font-weight: 700;
+    color: #333;
+}
+
+.page-heading small {
+    font-size: 1.1rem;
+    color: #888;
+    font-weight: 500;
+}
+
+.text-over {
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+footer {
+    color: #fff;
+    background-color: #212529;
+    margin-top: 50px;
+}
+
+footer ul.social-buttons li a {
+    background-color: #fff;
+    color: #212529
+}
+
+footer a {
+    color: #fed136
+}
+
+footer a:hover {
+    color: #fec503;
+}
+
+#mainNav .navbar-brand {
+    font-family: Montserrat, 'Helvetica Neue', Helvetica, Arial, sans-serif
+}
+
+#mainNav .dropdown-toggle[aria-expanded="true"] {
+    color: #fed136!important;
+}
+
+#mainNav .dropdown-menu {
+    background: #22252a;
+    border-radius: 0;
+    margin-top: -2px;
+    padding: 0;
+}
+
+#mainNav .dropdown-menu .dropdown-item {
+    color: #fff;
+    background: none;
+    font-size: 14px;
+    font-family: Montserrat, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    padding: 8px 16px;
+}
+
+#mainNav .dropdown-menu .dropdown-item+.dropdown-item {
+    border-top: 1px solid rgba(0, 0, 0, .15)
+}
+
+#mainNav .dropdown-menu .dropdown-item.active,
+#mainNav .dropdown-menu .dropdown-item:hover,
+#mainNav .dropdown-menu .dropdown-item:active {
+    color: #fed136;
+}
+
+#mainNav .dropdown-menu .dropdown-item:hover {
+    background: rgba(254, 209, 54, 0.2);
+}
+
+.table-hover tbody tr:hover {
+    background-color: rgba(0, 0, 0, .025);
+}
+
+.td-label {
+    width: 20%;
+    font-weight: 300;
+}
+
+.title {
+    color: #907517!important;
+    margin-bottom: 1.4rem;
+}
+
+table td {
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 160px;
+    text-overflow: ellipsis;
+}
+
+.btn-default {
+    font-weight: 400;
+    text-decoration: none;
+    background-color: rgba(221, 221, 221, 0.1);
+    border-color: #ddd;
+}
+
+.btn-default:hover {
+    background-color: rgba(221, 221, 221, 0.3);
+}
+
+.btn-default.active {
+    background-color: rgba(221, 221, 221, 0.4);
+    font-weight: 700
+}
+
+.btn.disabled {
+    cursor: not-allowed;
+}
+
+.paging .btn {
+    min-width: 40px
+}
+
+.paging-label {
+    color: #907517!important;
+    line-height: 40px
+}
+
+.panel-trans {
+    background-color: #fff;
+}
+
+.panel-trans .panel-heading {
+    padding: 10px 10px 10px 20px;
+    border-bottom: 2px solid #f8f9fa;
+}
+
+.panel-trans .panel-heading .tit {
+    font-size: 1.5rem;
+}
+
+.panel-trans .trans-item {
+    display: block;
+    float: left;
+    width: 100%;
+    position: relative;
+    padding: 14px 20px;
+    margin: 2px 0 0;
+    border-left: 3px solid #fec810;
+    border-bottom: 2px solid #f8f9fa;
+    background-color: #fff;
+}
+
+.panel-trans .trans-item .tit {
+    display: block;
+    float: left;
+    width: 100%;
+    padding-right: 50%
+}
+
+.panel-trans .trans-item .time {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 14px;
+    opacity: 0.6
+}
+
+.panel-trans .trans-item .info {
+    display: block;
+    float: left;
+    width: 100%;
+    margin: 8px 0 0;
+}
+
+.panel-trans .trans-item .info+.info {
+    margin: 4px 0 0;
+}
+
+.panel-trans .trans-item label {
+    margin: 0
+}
+
+.panel-trans .trans-item .info .add {
+    display: block;
+    float: left;
+    width: calc(40% - 30px);
+    font-size: 14px;
+}
+
+.panel-trans .trans-item .info .add-long {
+    display: block;
+    float: left;
+    width: 100%;
+    font-size: 14px;
+}
+
+.panel-trans .trans-item .info .ic {
+    display: block;
+    float: left;
+    width: 40px;
+    text-align: center;
+}
+
+.panel-trans .trans-item .info .amount {
+    display: block;
+    float: left;
+    font-size: 14px;
+    opacity: 0.6
+}
+
+.no-data {
+    padding: 40px 0
+}

@@ -1,0 +1,9 @@
+{
+    "ignore": [
+        "*.test.js",
+        "bin/*",
+        "build/*",
+        "src/*",
+        "views/*"
+    ]
+}

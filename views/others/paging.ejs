@@ -1,0 +1,35 @@
+<% if (paging) { %>
+    <div class="row">
+        <div class="col-md-6">
+            <span class="paging-label">
+                <%if (!paging.empty){%>
+                    Showing
+                    <%=paging.from%> to
+                        <%=paging.to%>
+                            of
+                            <%}%>
+                                <%=paging.total%>
+                                    <%=paging.unit%>
+            </span>
+        </div>
+        <%if (!paging.empty){%>
+            <div class="col-md-6 text-right">
+                <div class="btn-group paging" role="group" aria-label="Second group">
+                    <a href="<%=paging.buildUrl(paging.minPage)%>" class="btn btn-default">
+                        <span class="fa fa-chevron-left">
+                        </span>
+                    </a>
+                    <% paging.items.forEach(item => {%>
+                        <a href="<%=paging.buildUrl(item)%>" class="btn btn-default <%= paging.page==item ? 'active' : ''%>">
+                            <%=item%>
+                        </a>
+                        <%})%>
+                            <a href="<%=paging.buildUrl(paging.maxPage)%>" class="btn btn-default">
+                                <span class="fa fa-chevron-right">
+                                </span>
+                            </a>
+                </div>
+            </div>
+            <%}%>
+    </div>
+    <% } %>
